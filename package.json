@@ -1,0 +1,18 @@
+{
+  "name": "MessageContractGenerator",
+  "version": "1.0.0",
+  "description": "Generates C# types based on an .ini based DSL",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stefan Billiet",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0"
+  },
+  "dependencies": {
+    "ini": "^1.3.2"
+  }
+}
