@@ -27,8 +27,8 @@ describe('ModelItemConstructorRenderer', function () {
   describe('#render()', function () {
     it('should render the constructor of the type, initialising any provided arguments', function () {
       var constructorBlock = sut.render(model.commandModelItem);
-debugger;
+
       constructorBlock.should.equal(model.commandModelItemConstructor);
-    })
-  })
+    });
+  });
 });

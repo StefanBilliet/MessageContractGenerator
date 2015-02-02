@@ -2,7 +2,6 @@ var should = require('chai').should();
 var fs = require('fs');
 var ModelItem = require('../ModelItem');
 var ModelItemParser = require('../ModelItemParser');
-var ModelItem = require('../ModelItem');
 var ModelItemProperty = require('../ModelItemProperty');
 
 var model = {
