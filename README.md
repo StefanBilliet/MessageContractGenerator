@@ -1,2 +1,2 @@
 # MessageContractGenerator
-Something that parse C# classes from an .ini based DSL
+Something that parses C# classes from an .ini based DSL
