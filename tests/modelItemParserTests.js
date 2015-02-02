@@ -18,7 +18,7 @@ var model = {
       new ModelItemProperty('Id', 'Guid'),
       new ModelItemProperty('Name', 'String')])
   ]
-}
+};
 
 describe('ModelItemParser', function () {
   var sut;
