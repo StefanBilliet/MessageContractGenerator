@@ -6,7 +6,7 @@ var ModelItemPropertyRenderer = require('../../renderers/ModelItemPropertyRender
 
 var model = {
   modelItemProperty: new ModelItemProperty('Id', 'Guid'),
-  propertyString : 'public Guid Id { get; set; }' + endOfLine
+  propertyString : '    public Guid Id { get; set; }'
 };
 
 describe('ModelItemPropertyRenderer', function () {

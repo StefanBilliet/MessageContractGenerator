@@ -5,7 +5,7 @@ function ModelItemPropertyRenderer() {
   var self = this;
 
   self.render = function render (modelItemProperty) {
-    var template = 'public %s %s { get; set; }' + endOfLine;
+    var template = '    public %s %s { get; set; }';
 
     return util.format(template, modelItemProperty.Type, modelItemProperty.Name);
   }
