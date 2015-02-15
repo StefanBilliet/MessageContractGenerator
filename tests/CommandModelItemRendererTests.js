@@ -1,10 +1,10 @@
 var should = require('chai').should();
-var endOfLine = require('os').EOL;
 var ModelItem = require('../ModelItem');
 var ModelItemProperty = require('../ModelItemProperty');
 var ModelItemPropertyRenderer = require('../renderers/ModelItemPropertyRenderer');
 var ModelItemConstructorRenderer = require('../renderers/ModelItemConstructorRenderer');
 var ModelItemPropertyBuilderRenderer = require('../renderers/ModelItemPropertyBuilderRenderer');
+var CommandModelItemRenderer = require('../renderers/CommandModelItemRenderer');
 var util = require('util');
 var endOfLine = require('os').EOL;
 
@@ -50,35 +50,9 @@ describe('CommandModelItemRenderer', function () {
   describe('#render()', function () {
     it('should render a compilable clr type in the provided namespace', function () {
       var output = sut.render(model.commandModelItem, model.rootNamespace);
-debugger;
+
       output.should.deep.equal(model.renderedCommandModelItem);
     })
   });
 });
 
-function CommandModelItemRenderer(propertyRenderer, constructorRenderer, propertyBuilderRenderer) {
-  var self = this;
-
-  self.render = function render (commandModelItem, rootNamespace) {
-    var template = 'namespace %s.Commands {' + endOfLine +
-                   '  public class %s : ICommand {' + endOfLine +
-                   '%s' + endOfLine +
-                   '' + endOfLine +
-                   '%s' + endOfLine +
-                   '' + endOfLine +
-                   '%s' + endOfLine +
-                   '  }' +  endOfLine +
-                   '}'  + endOfLine +
-                   '';
-
-    var propertiesString = commandModelItem.Properties.map(propertyRenderer.render).join(endOfLine);
-    var constructorString = constructorRenderer.render(commandModelItem);
-    var propertyBuildersString = commandModelItem.Properties.map(function (modelItemProperty) {
-      return propertyBuilderRenderer.render(commandModelItem.Type, modelItemProperty.Name, commandModelItem.Properties);
-    }).join(endOfLine + '' + endOfLine);
-
-    return util.format(template, rootNamespace, commandModelItem.Type, propertiesString, constructorString, propertyBuildersString);
-  };
-
-  return self;
-}
