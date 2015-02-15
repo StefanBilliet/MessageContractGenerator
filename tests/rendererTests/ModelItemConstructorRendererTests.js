@@ -10,11 +10,12 @@ var model = {
       new ModelItemProperty('Id', 'Guid'),
       new ModelItemProperty('Name', 'String')]),
   commandModelItemConstructor :
-  'public CreateScheduleCommand() { }' + endOfLine +
-  'public CreateScheduleCommand(Guid id, String name) {' + endOfLine +
-  ' Id = id;' + endOfLine +
-  ' Name = name;' + endOfLine +
-  '}'
+  '    public CreateScheduleCommand() { }' + endOfLine +
+  '' + endOfLine +
+  '    public CreateScheduleCommand(Guid id, String name) {' + endOfLine +
+  '      Id = id;' + endOfLine +
+  '      Name = name;' + endOfLine +
+  '    }'
 };
 
 describe('ModelItemConstructorRenderer', function () {

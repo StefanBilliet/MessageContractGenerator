@@ -5,9 +5,9 @@ function ModelItemPropertyBuilderRenderer() {
   var self = this;
 
   self.render = function render (classType, propertyNameToBuild, modelItemProperties) {
-    var template = 'public %s With%s(%s value) {' + endOfLine +
-                   '  return new %s(%s);' + endOfLine +
-                   '}';
+    var template = '    public %s With%s(%s value) {' + endOfLine +
+                   '      return new %s(%s);' + endOfLine +
+                   '    }';
     var builderArgumentsString = modelItemProperties.map(function (modelItemProperty) {
       return modelItemProperty.Name == propertyNameToBuild ? 'value' : modelItemProperty.Name;
     }).join(', ');

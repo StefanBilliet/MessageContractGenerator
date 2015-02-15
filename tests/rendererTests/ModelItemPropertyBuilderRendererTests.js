@@ -7,9 +7,9 @@ var ModelItemPropertyBuilderRenderer = require('../../renderers/ModelItemPropert
 var model = {
   type: 'CreateScheduleCommand',
   modelItemProperties: [new ModelItemProperty('Id', 'Guid'), new ModelItemProperty('Name', 'String')],
-  propertyBuilderString : 'public CreateScheduleCommand WithId(Guid value) {' + endOfLine +
-                          '  return new CreateScheduleCommand(value, Name);' + endOfLine +
-                          '}'
+  propertyBuilderString : '    public CreateScheduleCommand WithId(Guid value) {' + endOfLine +
+                          '      return new CreateScheduleCommand(value, Name);' + endOfLine +
+                          '    }'
 };
 
 describe('ModelItemPropertyBuilderRenderer', function () {
